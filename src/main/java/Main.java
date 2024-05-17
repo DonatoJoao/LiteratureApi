@@ -7,7 +7,9 @@ public class Main {
         LiteraturaApi literaturaApi = new LiteraturaApi();
         try {
             LiteraturaDto literaturaDto = literaturaApi.getTerm("alice");
-            System.out.println(literaturaDto.getTitle());
+            System.out.println("oi "+literaturaDto);
+            System.out.println("oi" + literaturaDto.getTitle());
+            System.out.println();
 
         } catch (Exception e){
             System.out.println(e.getMessage());

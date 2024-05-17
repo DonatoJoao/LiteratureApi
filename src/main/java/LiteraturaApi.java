@@ -7,8 +7,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class LiteraturaApi {
-     String uid = "*****"; //meu usuarioId
-     String tokenid = "********"; //minha tokenId
+     String uid = "*******"; //meu usuarioId
+     String tokenid = "*********"; //minha tokenId
 //    private String term;
 
     LiteraturaDto literaturaDto = new LiteraturaDto();
@@ -19,6 +19,10 @@ public class LiteraturaApi {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://www.stands4.com/services/v2/literature.php?uid=" + uid + "&tokenid="+ tokenid + "&term=" + term + "&format=json"))
                     .build();
+//          String sendAs = client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+//                    .thenApply(HttpResponse::body)        // esse trecho traz as infomações, mas o resto não
+//                    .thenAccept(System.out::println)
+//                    .join().toString();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             ObjectMapper mapper = new ObjectMapper();
